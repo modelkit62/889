@@ -65,7 +65,10 @@ public class App {
 
         List<String> companies = Arrays.asList("paypal", "oracle", "", "microsoft", "", "apple");
         Stream<String> stream = companies.stream();
-        stream.forEach(s -> System.out.println(s));
+        // stream.forEach(s -> System.out.println(s));
+        List<String> paypal = stream.filter(s -> s.equals("paypal") || s.equals("microsoft") )
+                .collect(Collectors.toList());
+        paypal.forEach(System.out::println);
     }
 
 }
