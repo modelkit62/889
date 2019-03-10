@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class App {
 
@@ -37,10 +38,10 @@ public class App {
         Optional<List<String>> names = Optional.of(companyNames);
 
 
-        List<String> filteredList2 = names.stream()
+        /*List<String> filteredList2 = names.stream()
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
 
 
         Optional<Optional<Optional<List<String>>>> names1 = Optional.of(Optional.of(names));
@@ -60,7 +61,11 @@ public class App {
         System.out.println("==============");
         System.out.println(Arrays.toString(filteredList.toArray()));
         filteredList.forEach(System.out::println);
+        System.out.println("==============");
 
+        List<String> companies = Arrays.asList("paypal", "oracle", "", "microsoft", "", "apple");
+        Stream<String> stream = companies.stream();
+        stream.forEach(s -> System.out.println(s));
     }
 
 }
