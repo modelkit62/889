@@ -11,7 +11,7 @@ public class Clase {
             }
         };
 
-        iApp i_2 = (double a, double b) -> a + b;
+        iApp i_2 = (a, b) -> a + b;
 
         System.out.println(i_1.metodo(3, 3));
         System.out.println(i_2.metodo(3, 3));
