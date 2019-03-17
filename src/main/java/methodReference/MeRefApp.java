@@ -3,7 +3,7 @@ package methodReference;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class MeRefApp {
+public class MeRefApp { // HAY 4 MANERAS DE LLAMAR POR REFERENCIA!!!
 
 	public static void referenciarMetodoStatic() {
 		System.out.println("Método Referido static");
@@ -41,8 +41,8 @@ public class MeRefApp {
 		 */
 
 		/*
-		 * IPersona iper2 = (x,y)->(new Persona(x,y)); Persona per =
-		 * iper2.crear(1, "MitoCode");
+		 * IPersona iper2 = (x,y)->(new Persona(x,y));
+		 * Persona per = iper2.crear(1, "MitoCode");
 		 * System.out.println(per.getId()+" - "+per.getNombre());
 		 */
 
@@ -63,7 +63,7 @@ public class MeRefApp {
 		MeRefApp app = new MeRefApp();
 		// app.operar();
 		// app.referenciarMetodoInstanciaObjetoArbitrario();
-		Operacion op = app::referenciarMetodoInstanciaObjetoParticular;
+		Operacion op = app::referenciarMetodoInstanciaObjetoParticular; // porque es FUNCTIONAL, tendra el tregger desde este metodo!!!
 		op.saludar();
 		app.referenciarConstructor();
 	}
